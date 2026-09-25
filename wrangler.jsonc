@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "burning-paper",
+  "name": "encrypted",
   "main": "src/worker.js",
   "compatibility_date": "2026-09-18",
   "assets": {
@@ -23,5 +23,6 @@
     "namespace_id": "1001",
     "simple": { "limit": 30, "period": 60 }
   }],
-  "observability": { "enabled": false }
+  "observability": { "enabled": false },
+  "previews": {}
 }
