@@ -1,6 +1,6 @@
-# Burning Paper
+# Encrypted WLF Secrets
 
-Burning Paper shares encrypted text in two ways:
+WLF Studio's fork of [Burning Paper](https://github.com/CarloBu/burning-paper), intended for `encrypted.wlf.studio`, shares encrypted text in two ways:
 
 - **Sealed Letter:** a one-time link that expires after 24 hours.
 - **Whisper:** a direct transfer while both browsers are online.
@@ -9,7 +9,7 @@ The browser encrypts and decrypts the message. Astro serves the page, and a Clou
 
 ## Deploy
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/CarloBu/burning-paper)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/WLF-Studios/encrypted)
 
 The button copies the repository and deploys it. `wrangler.jsonc` configures storage; no application secrets or separate database setup are required.
 

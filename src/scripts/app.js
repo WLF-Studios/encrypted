@@ -61,7 +61,7 @@ function updateMode() {
   (live ? whisperStage : paperStage).append(byId('done-paper'));
   modeToggle.textContent = live ? 'Sealed Letter ↗' : 'try Whisper ↗';
   byId('compose-detail').textContent = mode === 'whisper'
-    ? 'Live delivery. No message stored on our servers.' : 'Encrypted in your browser. Retrievable once.';
+    ? 'Live delivery. No message stored on our servers.' : 'WLF encrypted secrets in your browser. Retrievable once.';
   byId('reveal-detail').textContent = mode === 'whisper'
     ? 'The sender must be online. Connect when you are ready to receive.'
     : 'Anyone with this link can open it. Reveal only when ready.';

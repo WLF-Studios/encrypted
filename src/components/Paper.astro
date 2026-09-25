@@ -7,7 +7,7 @@
       <div class="flap-face flap-front"><div class="paper-mirror"></div></div>
       <div class="flap-face flap-back">
         <div class="sealed-mark">
-          <span class="wax-seal">wlf</span>
+          <span class="wax-seal"></span>
           <span class="sealed-caption">this secret is sealed</span>
         </div>
       </div>
@@ -58,10 +58,14 @@
     display: grid; place-items: center; width: 52px; height: 51px;
     border-radius: 47% 51% 45% 49%;
     background: radial-gradient(ellipse at 35% 22%, #b55c42, #813b2c 55%, #60281e);
-    border: 1px solid #b9745540; outline: 1px solid #61281980; outline-offset: -7px;
+    border: 1px solid #b9745540;
     box-shadow: inset 1px 2px 3px #ffc99560, inset -2px -3px 4px #3e170d70, 1px 3px 2px #63513c55, 2px 7px 9px #63513c35;
-    color: #6d2d20; text-shadow: 0 1px 1px #d9845c80, 0 -1px 1px #39160c80;
-    font: italic 18px/1 Georgia, serif;
+  }
+  .wax-seal::before {
+    content: ''; width: 38px; height: 38px;
+    background: #6d2d20;
+    mask: url('/favicon.svg') center / contain no-repeat;
+    filter: drop-shadow(0 1px 1px #d9845c80) drop-shadow(0 -1px 1px #39160c80);
   }
   .sealed-caption { color: #8c8372; font: italic 12px Georgia, serif; }
   [data-state='folded'] .paper-rig { transform: translateY(25%); }

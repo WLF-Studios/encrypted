@@ -97,7 +97,7 @@ async function route(request, env) {
   if (!whisper && url.pathname !== '/api/secrets' && url.pathname !== '/api/reveal') fail(404, 'Not found.');
   if (request.method !== (whisper ? 'GET' : 'POST')) fail(405, 'Method not allowed.');
   if (request.headers.get('Origin') !== url.origin || request.headers.get('Sec-Fetch-Site') === 'cross-site') {
-    fail(403, 'Open Burning Paper directly to continue.');
+    fail(403, 'Open Encrypted WLF Secrets directly to continue.');
   }
   const { success } = await env.RATE_LIMITER.limit({ key: request.headers.get('CF-Connecting-IP') || 'local' });
   if (!success) fail(429, 'Too many requests. Please wait a minute.');
