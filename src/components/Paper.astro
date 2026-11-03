@@ -27,47 +27,36 @@
   }
   .paper-rig { position: absolute; inset: 0; z-index: 1; transform-style: preserve-3d; pointer-events: none; }
   .paper-surface, .flap-face {
-    background-color: #e9e6db;
-    background-image: url('/paper-grain.svg'), linear-gradient(112deg, #dfdbcf, #f0eee5 46%);
-    background-blend-mode: soft-light, normal;
+    background-color: #f6f6f6;
+    background-image: url('/paper-grain.svg');
+    background-blend-mode: soft-light;
   }
   .paper-surface {
     pointer-events: auto;
     position: absolute;
     inset: 0;
   }
-  [data-creased] .paper-surface::after { content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 3px; background: linear-gradient(#8076640b, #fff5, #80766408); pointer-events: none; }
-  .paper-content { height: 100%; padding: var(--message-padding); color: #3d3a32; }
+  [data-creased] .paper-surface::after { content: ''; position: absolute; top: 50%; left: 0; right: 0; height: 3px; background: linear-gradient(#0000000b, #fff5, #00000008); pointer-events: none; }
+  .paper-content { height: 100%; padding: var(--message-padding); color: #323131; }
   .paper-flap { position: absolute; top: 50%; left: 0; width: 100%; height: 50%; transform-origin: center top; transform-style: preserve-3d; visibility: hidden; }
   .flap-face { position: absolute; inset: 0; backface-visibility: hidden; overflow: hidden; }
   .flap-front {
-    /* Show the lower half of the same full-sheet texture and gradient. */
-    background-size: auto, 100% var(--sheet-height);
-    background-position: left calc(var(--sheet-height) / -2), left bottom;
-    background-repeat: repeat, no-repeat;
+    /* Continue the full-sheet grain across the hinge. */
+    background-position: left calc(var(--sheet-height) / -2);
     box-shadow: inset 0 1px #fff8;
   }
   .flap-back {
     transform: rotateX(180deg) translateZ(.5px);
-    background-image: url('/paper-grain.svg'), linear-gradient(170deg, #e1ddcf, #f0ece1 20%, #e6e1d4 92%, #cac2b1);
-    box-shadow: 0 -1px 0 #fffc, 0 3px 3px #0006, 0 15px 30px #0005, inset 0 -2px 3px #a99e8560;
+    box-shadow: 0 3px 3px #0006, 0 15px 30px #0005;
   }
   .paper-mirror { position: absolute; top: calc(var(--sheet-height) / -2); width: 100%; height: var(--sheet-height); }
   .sealed-mark { height: 100%; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; }
   .wax-seal {
-    display: grid; place-items: center; width: 52px; height: 51px;
-    border-radius: 47% 51% 45% 49%;
-    background: radial-gradient(ellipse at 35% 22%, #b55c42, #813b2c 55%, #60281e);
-    border: 1px solid #b9745540;
-    box-shadow: inset 1px 2px 3px #ffc99560, inset -2px -3px 4px #3e170d70, 1px 3px 2px #63513c55, 2px 7px 9px #63513c35;
-  }
-  .wax-seal::before {
-    content: ''; width: 38px; height: 38px;
-    background: #6d2d20;
+    width: 36px; height: 36px;
+    background: #323131;
     mask: url('/favicon.svg') center / contain no-repeat;
-    filter: drop-shadow(0 1px 1px #d9845c80) drop-shadow(0 -1px 1px #39160c80);
   }
-  .sealed-caption { color: #8c8372; font: italic 12px Georgia, serif; }
+  .sealed-caption { color: #6f6f6f; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; }
   [data-state='folded'] .paper-rig { transform: translateY(25%); }
   [data-state='folded'] .paper-surface { clip-path: inset(0 0 50% 0); }
   /* Overlap the hinge so antialiased edges cannot expose the dark background. */
@@ -77,6 +66,6 @@
   [data-state='gone'] .paper-rig { visibility: hidden; }
   .burn-canvas { position: absolute; top: -64px; left: -64px; z-index: 2; width: calc(100% + 64px + var(--drift-space, 64px)); height: calc(100% + 128px); pointer-events: none; }
   .paper-done { position: absolute; inset: 0; z-index: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 30px; }
-  .paper-done h2 { color: #d5dce7; font: 400 34px Georgia, serif; margin: 0; }
-  .paper-done p { max-width: 260px; color: var(--muted); font-size: 12px; line-height: 1.8; margin: 16px 0 0; }
+  .paper-done h2 { color: #f6f6f6; font: 300 44px/1.1 var(--serif); letter-spacing: -.03em; margin: 0; }
+  .paper-done p { max-width: 260px; color: var(--muted); font-size: 12px; line-height: 1.4; margin: 16px 0 0; }
 </style>

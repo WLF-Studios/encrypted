@@ -166,7 +166,7 @@ export function createPaperMotion(stage) {
           ctx.beginPath();
           visibleEdge.forEach(([x, y], i) => i ? ctx.lineTo(x, y + top) : ctx.moveTo(x, y + top));
           if (ash) {
-            ctx.strokeStyle = '#a39c8e';
+            ctx.strokeStyle = '#9a9a9a';
             ctx.lineWidth = 1;
             ctx.stroke();
           } else {
@@ -223,7 +223,7 @@ export function createPaperMotion(stage) {
             ctx.save();
             ctx.translate(p.x, p.y);
             ctx.rotate(p.angle);
-            ctx.fillStyle = `rgba(${p.shade}, ${p.shade - 4}, ${p.shade - 12}, ${fade * .85})`;
+            ctx.fillStyle = `rgba(${p.shade}, ${p.shade}, ${p.shade},${fade * .85})`;
             ctx.beginPath();
             ctx.moveTo(-size, -size * .4);
             ctx.lineTo(size * .7, -size * .7);

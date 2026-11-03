@@ -95,11 +95,11 @@ export function createWhisperAir(stage) {
     const spread = current.spread * (1 + stretch * current.bind * 0.3);
     const ink = context.createLinearGradient(width * (0.5 - spread / 2), 0,
       width * (0.5 + spread / 2), 0);
-    ink.addColorStop(0, 'rgba(201, 217, 236, 0)');
-    ink.addColorStop(0.22, 'rgba(201, 217, 236, 0.28)');
-    ink.addColorStop(0.55, 'rgba(235, 242, 250, 0.58)');
-    ink.addColorStop(0.82, 'rgba(201, 217, 236, 0.24)');
-    ink.addColorStop(1, 'rgba(201, 217, 236, 0)');
+    ink.addColorStop(0, 'rgba(220, 220, 220, 0)');
+    ink.addColorStop(0.22, 'rgba(220, 220, 220, 0.28)');
+    ink.addColorStop(0.55, 'rgba(245, 245, 245, 0.58)');
+    ink.addColorStop(0.82, 'rgba(220, 220, 220, 0.24)');
+    ink.addColorStop(1, 'rgba(220, 220, 220, 0)');
     context.strokeStyle = ink;
 
     // Keep neighboring phases close enough to preserve space between filaments.
